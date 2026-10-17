@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>订单查询</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+  <div class="bg">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-blob b3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <nav class="nav scrolled">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-logo" id="logoIcon"></span>
+        <span class="brand-name" id="siteName">发卡商城</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="/">返回商城</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="query-wrap">
+    <div class="query-head">
+      <h1 class="grad-text" style="font-size:30px;font-weight:800;letter-spacing:-.01em">订单卡密查询</h1>
+      <p class="sub" style="margin-top:10px">输入订单号即可查询发货状态与卡密，已设置联系方式的订单需一并填写</p>
+    </div>
+
+    <section class="glass-strong query-card">
+      <div class="field">
+        <label>订单号</label>
+        <input class="input" id="orderNo" placeholder="例如 F2026101700000001" maxlength="40" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>联系方式（选填）</label>
+        <input class="input" id="contact" placeholder="下单时填写的手机号 / 邮箱 / QQ" maxlength="64" autocomplete="off">
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" id="queryBtn">查询订单</button>
+      <div class="pay-links" style="margin-top:18px">
+        <a href="/pay.html">去支付</a>
+        <a href="/">返回商城</a>
+      </div>
+    </section>
+
+    <section id="result" style="display:none"></section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/query.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>收银台</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+  <div class="bg">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-blob b3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <nav class="nav scrolled">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-logo" id="logoIcon"></span>
+        <span class="brand-name" id="siteName">发卡商城</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="/">返回商城</a>
+        <a class="nav-link" href="/query.html" id="navQuery"></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pay-wrap">
+    <div class="pay-head">
+      <div id="payTitle" class="small muted" style="letter-spacing:.12em">收银台</div>
+      <div class="pay-amount"><small>¥</small><span id="payAmount">0.00</span></div>
+      <div class="order-no" id="orderNo"></div>
+    </div>
+
+    <!-- 支付中 -->
+    <section class="glass-strong pay-card" id="payCard">
+      <div class="pay-method"><span class="ali-logo">支</span>支付宝安全支付</div>
+      <div class="qr-frame" id="qrFrame">
+        <img id="qrImg" alt="支付二维码">
+        <div class="qr-scan"></div>
+      </div>
+      <p class="qr-tip" id="qrTip">请使用「支付宝」扫一扫完成支付</p>
+      <div class="pay-actions">
+        <button class="btn btn-ghost" id="refreshBtn"></button>
+        <a class="btn btn-ghost" id="jumpBtn" style="display:none" target="_blank" rel="noopener"></a>
+      </div>
+      <div class="pay-links">
+        <a href="/query.html">查询卡密</a>
+        <a href="/">再买一单</a>
+      </div>
+      <!-- 演示模式：模拟支付 -->
+      <div class="mock-pay" id="mockBox" style="display:none">
+        <div class="warn-box" style="border-color:rgba(56,189,248,.28);background:rgba(56,189,248,.07);color:#7dd3fc">
+          <span id="mockWarnIcon"></span>
+          <span>当前为<b>演示模式</b>（未开启真实支付宝），点击下方按钮模拟支付成功。</span>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block mt16" id="mockBtn">模拟支付成功</button>
+      </div>
+    </section>
+
+    <!-- 支付步骤 -->
+    <div class="steps" id="steps">
+      <div class="step done" data-s="1">
+        <div class="step-dot"><span class="ic" style="width:16px;height:16px"></span></div>
+        <div class="step-label">创建订单</div>
+      </div>
+      <div class="step on" data-s="2">
+        <div class="step-dot"><span class="ic" style="width:16px;height:16px"></span></div>
+        <div class="step-label">支付中</div>
+      </div>
+      <div class="step" data-s="3">
+        <div class="step-dot"><span class="ic" style="width:16px;height:16px"></span></div>
+        <div class="step-label">自动发货</div>
+      </div>
+    </div>
+
+    <!-- 支付成功 -->
+    <section id="successView" style="display:none">
+      <div class="success-hero">
+        <div class="success-ring"><span class="ic"></span></div>
+        <div class="success-title">支付成功 · 卡密已自动发货</div>
+        <div class="success-sub">卡密请妥善保存，复制后可在任意设备使用</div>
+      </div>
+      <div class="glass-strong cards-box" style="padding:24px 26px">
+        <div class="cards-title"><span class="ic" style="color:var(--green)"></span>订单卡密（共 <b id="cardCount" style="margin:0 2px">0</b> 张）</div>
+        <div id="cardsList"></div>
+        <div id="contactAsk" style="display:none">
+          <div class="field mt16">
+            <label>该订单设置了联系方式，请输入下单时填写的联系方式查看卡密</label>
+            <input class="input" id="contactInput" placeholder="手机号 / 邮箱 / QQ" maxlength="64">
+            <button class="btn btn-ghost btn-sm" id="contactBtn">查看卡密</button>
+          </div>
+        </div>
+        <div class="warn-box mt16">
+          <span id="warnIcon"></span>
+          <span>请<b>保存订单号</b>：<span class="mono" id="warnOrderNo" style="font-weight:700"></span>，如丢失卡密可凭订单号与联系方式查询找回。</span>
+        </div>
+      </div>
+      <div class="pay-actions mt24">
+        <a class="btn btn-primary" href="/">再买一单</a>
+        <a class="btn btn-ghost" href="/query.html">查询订单</a>
+      </div>
+    </section>
+
+    <!-- 订单失效 -->
+    <section id="closedView" style="display:none">
+      <div class="glass-strong pay-card" style="padding:44px 28px">
+        <div class="empty" style="padding:20px 0">
+          <div class="empty-icon" style="color:var(--text-3)"></div>
+          <p style="font-size:15px;color:var(--text)">该订单当前状态无法继续支付</p>
+          <a class="btn btn-ghost mt8" href="/">返回商城</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/pay.js"></script>
+</body>
+</html>

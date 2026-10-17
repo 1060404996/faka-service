@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>发卡商城</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/shop.css">
+</head>
+<body>
+  <div class="bg">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-blob b3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-logo" id="logoIcon"></span>
+        <span class="brand-name" id="siteName">发卡商城</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link hide-sm" href="/query.html" id="navQuery"></a>
+        <a class="nav-link hide-sm" href="/admin.html"></a>
+        <a class="nav-link" id="navSupport" href="#" style="display:none"></a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="hero-badge"><span class="dot"></span>全自动发卡 · 支付即到账</span>
+      <h1>极速<span class="grad-text">自动发卡</span><br>安全秒级到账</h1>
+      <p class="sub" id="subtitle"></p>
+      <div class="hero-cta">
+        <a href="#products" class="btn btn-primary btn-lg" id="ctaBuy"></a>
+        <a href="/query.html" class="btn btn-ghost btn-lg"></a>
+      </div>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </header>
+
+  <main class="wrap" id="products">
+    <div class="notice" id="notice" style="display:none"></div>
+    <div class="toolbar">
+      <div class="chips" id="chips"></div>
+      <div class="search-box">
+        <span id="searchIcon"></span>
+        <input type="text" id="searchInput" placeholder="搜索商品…" autocomplete="off">
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-logo" style="width:30px;height:30px;border-radius:9px" id="footLogo"></span>
+        <span class="brand-name" id="footName"></span>
+      </div>
+      <div id="footSub"></div>
+      <div>© 2026 · Powered by 星云发卡系统 · 请遵守所在地区法律法规，仅限合法虚拟商品交易</div>
+    </div>
+  </footer>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/index.js"></script>
+</body>
+</html>

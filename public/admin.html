@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>管理后台</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+  <div class="bg">
+    <div class="bg-blob b1"></div>
+    <div class="bg-blob b2"></div>
+    <div class="bg-blob b3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- 登录视图 -->
+  <div id="loginView" class="login-page" style="display:none">
+    <div class="glass-strong login-card">
+      <div class="brand">
+        <span class="brand-logo" id="loginLogo"></span>
+        <span class="brand-name" id="loginSiteName">星云发卡</span>
+      </div>
+      <div class="login-title">管理后台</div>
+      <div class="login-sub">请输入管理员密码登录</div>
+      <div class="field">
+        <input class="input" id="loginPass" type="password" placeholder="管理员密码" autocomplete="current-password">
+      </div>
+      <button class="btn btn-primary btn-lg btn-block" id="loginBtn">登 录</button>
+      <div class="login-hint">默认密码 <b>admin123</b>，登录后请在「系统设置」中立即修改</div>
+    </div>
+  </div>
+
+  <!-- 后台视图 -->
+  <div id="appView" style="display:none">
+    <div class="sidebar-backdrop" id="sbBackdrop" style="display:none"></div>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/" target="_blank">
+        <span class="brand-logo" style="width:36px;height:36px;border-radius:11px" id="appLogo"></span>
+        <span class="brand-name" id="appSiteName">星云发卡</span>
+      </a>
+      <button class="nav-item" data-view="dashboard"><span class="ic"></span>仪表盘</button>
+      <button class="nav-item" data-view="products"><span class="ic"></span>商品管理</button>
+      <button class="nav-item" data-view="cards"><span class="ic"></span>卡密管理</button>
+      <button class="nav-item" data-view="orders"><span class="ic"></span>订单管理</button>
+      <button class="nav-item" data-view="settings"><span class="ic"></span>系统设置</button>
+      <div class="sidebar-foot">
+        <a class="nav-item" href="/" target="_blank"><span class="ic"></span>前台首页</a>
+        <button class="nav-item" id="logoutBtn"><span class="ic"></span>退出登录</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div>
+          <h1 class="topbar-title" id="pageTitle">仪表盘</h1>
+          <small id="pageSub"></small>
+        </div>
+        <div class="topbar-right">
+          <button class="btn btn-ghost btn-sm menu-btn" id="menuBtn">菜单</button>
+          <a class="btn btn-ghost btn-sm" href="/" target="_blank">前台首页</a>
+          <button class="btn btn-ghost btn-sm" id="topLogout">退出</button>
+        </div>
+      </div>
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
