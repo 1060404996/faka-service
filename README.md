@@ -1,4 +1,4 @@
-# 星云发卡服务系统
+# 老王发卡服务系统
 
 **作者 / 维护者：yu-ge（GitHub：[1060404996](https://github.com/1060404996)）**
 
@@ -49,7 +49,7 @@ faka-service/
 │   ├── admin.html         # 管理后台
 │   ├── css/ js/           # 样式与脚本
 ├── test/                  # 端到端测试与支付宝算法自检
-└── data/                  # 运行时生成：faka.db（SQLite 数据文件，勿提交）
+└── data/                  # 运行时生成：faka.db（SQLite 数据文件）
 ```
 
 ## 快速开始
@@ -87,7 +87,7 @@ bash deploy.sh
 ### 快速验证
 
 ```bash
-npm test                     # 端到端 API 测试（模拟支付全链路，约 25 项断言）
+npm test                     # 端到端 API 测试（模拟支付全链路，约 20 项断言）
 node test/alipay-test.js     # 支付宝 RSA2 签名/验签算法自检
 ```
 
