@@ -3,7 +3,7 @@
 (function () {
   const { $, $$, esc, fmtMoney, api, getToken, setToken, icon, toast, openModal, countUp, emptyState } = window.Faka;
 
-  const state = { siteName: '星云发卡', view: 'dashboard', categories: [] };
+  const state = { siteName: '老王发卡', view: 'dashboard', categories: [] };
 
   /* ================= 初始化 ================= */
   init();
